@@ -5,7 +5,6 @@ public class MyDoor : MonoBehaviour
     [SerializeField] private MyButton button;
     private bool isOpen = false;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         button.OnPressed += OpenDoor;

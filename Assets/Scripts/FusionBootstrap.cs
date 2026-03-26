@@ -1,11 +1,9 @@
-using Fusion;
-using Fusion.Sockets;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Unity.VisualScripting;
+using Fusion;
+using Fusion.Sockets;
 using UnityEngine;
-using static Unity.Collections.Unicode;
 
 
 public class FusionBootstrap : MonoBehaviour, INetworkRunnerCallbacks
@@ -25,6 +23,12 @@ public class FusionBootstrap : MonoBehaviour, INetworkRunnerCallbacks
     public struct NetworkInputData : INetworkInput
     {
         public Vector2 move;
+        public NetworkButtons buttons;
+    }
+
+    public enum InputButton
+    {
+        Fire = 0,
     }
 
     public void StartHost() => _ = StartGame(GameMode.Host);
@@ -106,6 +110,13 @@ public class FusionBootstrap : MonoBehaviour, INetworkRunnerCallbacks
             Input.GetAxisRaw("Horizontal"),
             Input.GetAxisRaw("Vertical")
             );
+        
+        var buttons = new NetworkButtons();                                             //네트워크 버튼 생성
+        buttons.Set((int)InputButton.Fire, Input.GetMouseButton(0));                //마우스 버튼
+
+        data.buttons = buttons;
+
+
         input.Set(data);
     }
     public void OnInputMissing(NetworkRunner runner, PlayerRef player, NetworkInput input) { }
