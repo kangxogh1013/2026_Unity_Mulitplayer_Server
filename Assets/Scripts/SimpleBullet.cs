@@ -9,7 +9,7 @@ public class SimpleBullet : NetworkBehaviour
 
     [Networked] private TickTimer LifeTimer { get; set; }                   //네트워크의 타이머
 
-    [Networked] private PlayerRef Owner { get; set; }
+    [Networked] private PlayerRef Owner {  get; set; }
 
     public void Init(PlayerRef owner)
     {
@@ -31,14 +31,14 @@ public class SimpleBullet : NetworkBehaviour
 
         transform.position += transform.forward * speed * Runner.DeltaTime;     //총알은 앞으로 간다.
 
-        if (Object.HasStateAuthority && LifeTimer.Expired(Runner))               //타이머가 만료 될 경우
+        if(Object.HasStateAuthority && LifeTimer.Expired(Runner))               //타이머가 만료 될 경우
         {
             Runner.Despawn(Object);                                             //디스폰한다.
         }
 
         Collider[] hits = Physics.OverlapSphere(transform.position, hitRadius);
 
-        foreach (var hit in hits)
+        foreach(var hit in hits)
         {
             SimplePlayer player = hit.GetComponentInParent<SimplePlayer>();
 

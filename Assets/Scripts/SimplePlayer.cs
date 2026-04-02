@@ -10,7 +10,7 @@ public class SimplePlayer : NetworkBehaviour
     [SerializeField] private NetworkPrefabRef bulletPrefab;
     [SerializeField] private Transform firePoint;
 
-    [Networked] private TickTimer FireCooldown { get; set; }
+    [Networked] private TickTimer FireCooldown {  get; set; }
     [SerializeField] private float fireInterval = 0.2f;
 
     public override void FixedUpdateNetwork()
@@ -39,12 +39,12 @@ public class SimplePlayer : NetworkBehaviour
         //น฿ป็
         if (inputData.buttons.IsSet((int)FusionBootstrap.InputButton.Fire))
         {
-            if (FireCooldown.ExpiredOrNotRunning(Runner))
+            if(FireCooldown.ExpiredOrNotRunning(Runner))
             {
                 Fire();
                 FireCooldown = TickTimer.CreateFromSeconds(Runner, fireInterval);
             }
-
+           
         }
     }
 
