@@ -124,7 +124,7 @@ Transform:
   m_GameObject: {fileID: 1163295543961674296}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -880,6 +880,16 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   cameraRoot: {fileID: 5859584391137783010}
+  cameraFollowOffset: {x: 0, y: 1.5, z: 0}
+  cameraSenesitivity: 3
+  minPitch: -30
+  maxPitch: 60
+  holdPoint: {fileID: 8411154135152864960}
+  pickupDistance: 3
+  dropForce: 2
+  pickupMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &-9076886767550385886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2014,7 +2024,7 @@ Transform:
   m_GameObject: {fileID: 5859584391137783010}
   serializedVersion: 2
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 3, z: -3}
+  m_LocalPosition: {x: 0, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2129,7 +2139,7 @@ GameObject:
   - component: {fileID: 7447991807869917459}
   - component: {fileID: 6469375871029672638}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: HoidPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

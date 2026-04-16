@@ -760,6 +760,11 @@ MonoBehaviour:
   - {fileID: 1979026515}
   - {fileID: 1440256628}
   - {fileID: 1876578179}
+  pickableBoxPrefab:
+    RawGuidValue: c0358c3be5ee21042a3d8d4f62f29a42
+  boxSpawnPoints:
+  - {fileID: 1979026515}
+  - {fileID: 1440256628}
 --- !u!4 &1735220029
 Transform:
   m_ObjectHideFlags: 0
