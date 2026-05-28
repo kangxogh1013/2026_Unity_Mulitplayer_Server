@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "981332612532",
+    "project_id": "test-78eaa",
+    "storage_bucket": "test-78eaa.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:981332612532:android:c0c9305fcac42b363dcee1",
+        "android_client_info": {
+          "package_name": "com.DefaultCompany_2026Unity_Multiplayer_Server_3D"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcvnMXG5uaNMoL63rxr7YTOXUvGM30rLw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
